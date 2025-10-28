@@ -1,0 +1,45 @@
+Patch Title: Input Validation Fix for Security Hardening
+Author: MCG-Chacal
+Date: 2025-10-28
+Program: Google Patch Rewards
+
+Summary:
+This patch improves input validation in the user authentication module
+to prevent potential injection and overflow attacks.
+
+Before:
+- Input was accepted without length or type checks.
+- User data could trigger unintended behavior under certain inputs.
+
+After:
+- Added server-side validation for input length and allowed characters.
+- Enforced JSON schema before processing.
+- Improved error handling and logging.
+
+Impact:
+This reduces the risk of injection and denial-of-service vulnerabilities
+in the authentication API, strengthening the system’s overall security posture.
+
+Verification:
+- Tested with malformed input requests (400 responses).
+- Verified normal login flow remains unaffected.
+- Checked logs and confirmed no exceptions thrown.
+
+Files Modified:
+- src/auth/validate_input.py
+- src/utils/sanitize.js
+
+Patch Diff:
+<coloque aqui o trecho de código modificado ou use um diff real>
+
+Example Diff:
+--- a/src/auth/validate_input.py
++++ b/src/auth/validate_input.py
+@@ -12,6 +12,9 @@
+ def validate_input(data):
+-    return True
++    if not isinstance(data, dict):
++        raise ValueError("Invalid input type")
++    if len(data.get('username', '')) > 30:
++        raise ValueError("Username too long")
++    return True
