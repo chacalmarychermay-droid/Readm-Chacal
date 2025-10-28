@@ -1,0 +1,5 @@
+MCG-CHACAL-VERIF-20251028-ALT-06
+Repo: chacalmarychermay-droid/Readm-Chacal
+Purpose: Bug bounty verification (alternative proof, distinct from Exoscale file)
+Contact: chacalmarychermay@gmail.com
+Note: PoC hosted on GitHub Pages. This file is an alternative proof and not authoritative for domain ownership.
