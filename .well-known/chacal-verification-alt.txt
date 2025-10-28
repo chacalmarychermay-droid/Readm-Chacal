@@ -1,0 +1,5 @@
+MCG-CHACAL-VERIF-20251028-ALT-07
+Repo: chacalmarychermay-droid/Readm-Chacal
+Purpose: Intigriti verification 
+Contact: chacalmarychermay@gmail.com
+Note: Alternative proof of authorship hosted on GitHub Pages.
